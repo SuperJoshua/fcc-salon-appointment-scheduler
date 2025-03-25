@@ -388,3 +388,13 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 psql -U freecodecamp -d postgres
 psql -U freecodecamp -d postgres
 ./create_tables.sh
+git remote set-url origin https://github.com/SuperJoshua/fcc-salon-appointment-scheduler.git
+git branch -M main
+git push -u origin main
+git checkout -b solution
+git add .
+git commit -m "first commit"
+git push --set-upstream origin solution
+git push
+pg_dump -cC --inserts -U freecodecamp salon > salon.sql
+git add .
